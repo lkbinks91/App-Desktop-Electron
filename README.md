@@ -14,7 +14,7 @@ Le Gestionnaire de Budget est une application de bureau développée avec Electr
 ## Installation
 1. Clonez le dépôt :
     ```sh
-    git clone https://github.com/votre-utilisateur/gestionnaire-de-budget.git
+    git clone git@github.com:lkbinks91/App-Desktop-Electron.git
     ```
 2. Accédez au répertoire du projet :
     ```sh
@@ -29,3 +29,12 @@ Le Gestionnaire de Budget est une application de bureau développée avec Electr
 Pour démarrer l'application, exécutez la commande suivante :
 ```sh
 npm start
+
+Technologies Utilisées
+Electron
+Chart.js
+Tailwind CSS
+
+Licence
+Ce projet est sous licence MIT. Voir le fichier LICENSE pour plus de détails.
+
