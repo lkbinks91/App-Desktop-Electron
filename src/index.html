@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gestionnaire de Budget</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <h1 class="bg-slate-800 text-white p-6 text-2xl font-bold text-center mb-6">On gère le Budget</h1>
+    
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-xl font-semibold mb-4">Nouvelle Dépense</h2>
+                <form id="expenseForm" class="space-y-4">
+                    <div>
+                        <label for="amount" class="block font-medium mb-1">Montant ($)</label>
+                        <input type="number" id="amount" required min="0" step="0.01"
+                            class="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    
+                    <div>
+                        <label for="category" class="block font-medium mb-1">Catégorie</label>
+                        <select id="category" required
+                            class="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label for="date" class="block font-medium mb-1">Date</label>
+                        <input type="date" id="date" required
+                            class="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    
+                    <div>
+                        <label for="description" class="block font-medium mb-1">Description</label>
+                        <input type="text" id="description" required
+                            class="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    
+                    <button type="submit" id="addExpense" disabled
+                        class="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 disabled:bg-gray-400 disabled:cursor-not-allowed">
+                        Ajouter Dépense
+                    </button>
+                </form>
+                <div id="error-message" class="text-red-500 text-sm mt-2" style="display: none;"></div>
+            </div>
+
+            <!-- Bloc graphiques -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="h-64">
+                    <canvas id="expensesPieChart"></canvas>
+                </div>
+                <div class="mt-6">
+                    <h3 class="text-lg font-medium mb-2">Progression du Budget</h3>
+                    <div class="w-full bg-gray-200 rounded-full h-4">
+                        <div id="budgetProgress" class="bg-green-500 h-4 rounded-full transition-all duration-300"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Historique des dépenses -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+            <h2 class="text-xl font-semibold mb-4">Historique des Dépenses</h2>
+            <div class="overflow-x-auto max-h-80">
+                <table id="expensesTable" class="w-full">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Catégorie</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium t  ext-gray-500 uppercase tracking-wider">Description</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Montant</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+            <h2 class="text-xl font-semibold mb-4">Gestion des Catégories</h2>
+            <div class="flex gap-4 mb-4">
+                <input type="text" id="newCategory" placeholder="Nouvelle catégorie"
+                    class="flex-1 p-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                <button id="addCategory"
+                    class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">
+                    Ajouter
+                </button>
+            </div>
+            <div class="categories-list space-y-2">
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-white rounded-lg shadow-md p-6">
+    <div id="deletedCategoriesSection">
+        <h3>Catégories supprimées</h3>
+        <div id="deletedCategoriesList"></div>
+    </div>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+</html>
