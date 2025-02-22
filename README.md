@@ -18,7 +18,7 @@ Le Gestionnaire de Budget est une application de bureau développée avec Electr
     ```
 2. Accédez au répertoire du projet :
     ```sh
-    cd gestionnaire-de-budget
+    cd electron-projet-pt3
     ```
 3. Installez les dépendances :
     ```sh
@@ -37,4 +37,9 @@ Tailwind CSS
 
 Licence
 Ce projet est sous licence MIT. Voir le fichier LICENSE pour plus de détails.
+
+## Demo video
+
+[![Miniature de la démo](./assets/miniature.png)](https://youtu.be/D2e4_G-rhlA)
+
 

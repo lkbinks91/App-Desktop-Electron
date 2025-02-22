@@ -1,0 +1,60 @@
+{
+  "expenses": [
+    {
+      "id": 1740183340982,
+      "amount": 250,
+      "categoryId": 2,
+      "date": "2025-02-22",
+      "description": "courses(groceries)"
+    },
+    {
+      "id": 1740183385326,
+      "amount": 1200,
+      "categoryId": 1740183355199,
+      "date": "2025-02-22",
+      "description": "Epargne du mois"
+    },
+    {
+      "id": 1740183407869,
+      "amount": 65,
+      "categoryId": 3,
+      "date": "2025-02-22",
+      "description": "Cinema"
+    },
+    {
+      "id": 1740183435544,
+      "amount": 120,
+      "categoryId": 2,
+      "date": "2025-02-22",
+      "description": "Resto"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Factures",
+      "isDefault": true
+    },
+    {
+      "id": 2,
+      "name": "Alimentation",
+      "isDefault": true
+    },
+    {
+      "id": 3,
+      "name": "Loisirs",
+      "isDefault": true
+    },
+    {
+      "id": 4,
+      "name": "Transport",
+      "isDefault": true
+    },
+    {
+      "id": 1740183355199,
+      "name": "REER",
+      "isDefault": false
+    }
+  ],
+  "deletedCategories": []
+}
