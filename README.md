@@ -25,6 +25,11 @@ Le Gestionnaire de Budget est une application de bureau développée avec Electr
     npm install
     ```
 
+## Demo video
+
+[![Miniature de la démo](./assets/miniature.png)](https://youtu.be/D2e4_G-rhlA)
+
+
 ## Utilisation
 Pour démarrer l'application, exécutez la commande suivante :
 ```sh
@@ -38,8 +43,5 @@ Tailwind CSS
 Licence
 Ce projet est sous licence MIT. Voir le fichier LICENSE pour plus de détails.
 
-## Demo video
-
-[![Miniature de la démo](./assets/miniature.png)](https://youtu.be/D2e4_G-rhlA)
 
 
